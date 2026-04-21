@@ -16,7 +16,7 @@ import './globals.css';
           <Link href='/' className="hover:text-blue-400"> Home </Link>
           <Link href='/about' className="hover:text-blue-400"> About </Link>
         </nav>
-        <div className="p-4">{children}</div>
+        <div className="p-10 bg-gray-300">{children}</div>
       </body>
     </html>
   );

@@ -8,8 +8,8 @@ export default function WishlistButton() {
 
     return (
         <button onClick={ () => setAdded(!added)}
-        className="mt-2 px-3 py-1 rounded border text-sm">
-            {added ? '❤ In Wishlist' : '⬛ Add to Wishlist'}
+        className="px-3 py-1 rounded border text-sm ">
+            {added ? '❤ In Wishlist' : '🖤 Add to Wishlist'}
         </button>
     );
 }
