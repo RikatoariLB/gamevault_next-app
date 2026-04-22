@@ -1,15 +1,10 @@
 
 import { getGames } from "../lib/api";
 import GameCard from "../components/GameCard";
-import Link from "next/link";
 
-export default async function HomePage({searchParams} : { searchParams: Promise<{page?: string}>}) {
+export default async function HomePage() {
   const { loading, error } = ("");
-  const limit = 10;
-  const params = await searchParams;
-  const page = Number(params?.page) || 1;
-  const games = await getGames({ limit, offset: (page - 1) * limit });
-  
+  const games = await getGames();
 
   if (loading) return <div>Loading...</div>;
   if (error) {
@@ -23,10 +18,6 @@ export default async function HomePage({searchParams} : { searchParams: Promise<
         {games.map((game, index) => (
           <GameCard key={game.dealID} game={game} index={index}/>
         ))}
-      </div>
-      <div>
-        <Link href={`/?page=${page - 1}`} disabled={page === 1}>Previous</Link>
-        <Link href={`/?page=${page + 1}`}>Next</Link>
       </div>
     </main>
   );
