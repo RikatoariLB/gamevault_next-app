@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+.game-card {
+	height: 225px; 
+	display: flex;
+	flex-direction: column;
+}
+
+.game-card .description-area {
+	min-height: 54px; 
+	max-height: 54px;
+	overflow: hidden;
+}
+
+.line-clamp-3 {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.wishlist-button {
+	display: flex;
+	justify-content: left;
+	width: 150;
+}

@@ -2,13 +2,12 @@
 import Link from "next/link";
 import './globals.css';
 
-
  export const metadata = {
   title: 'GameVault',
   description: 'Your favorite video game catalog'
  };
 
- export default function RootLayout({ children }) {
+ export default function RootLayout({ children } : { children: React.ReactNode }) {
   return(
     <html lang='en'>
       <body>

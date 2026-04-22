@@ -3,12 +3,16 @@
 
 import { useState } from "react";
 
-export default function WishlistButton() {
+interface WishlistButtonProps {
+    dealID: string;
+}
+
+export default function WishlistButton({ dealID }: WishlistButtonProps) {
     const [added, setAdded] = useState(false);
 
     return (
         <button onClick={ () => setAdded(!added)}
-        className="px-3 py-1 rounded border text-sm ">
+        className="wishlist-button px-3 py-1 rounded border text-sm ">
             {added ? '❤ In Wishlist' : '🖤 Add to Wishlist'}
         </button>
     );
