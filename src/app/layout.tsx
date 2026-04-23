@@ -1,21 +1,24 @@
  
 import Link from "next/link";
 import './globals.css';
+import { cookies } from "next/headers";
+import Nav from "../components/Nav";
 
  export const metadata = {
   title: 'GameVault',
   description: 'Your favorite video game catalog'
  };
 
- export default function RootLayout({ children } : { children: React.ReactNode }) {
+ export default async function RootLayout({ children } : { children: React.ReactNode }) {
+  const cookieStore = await cookies();
+  const token = cookieStore.get('token')?.value;
+  const isLoggedIn = !!token;
+
   return(
     <html lang='en'>
       <body>
-        <nav className='flex gap-4 p-4 bg-gray-900 text-white'>
-          <Link href='/' className="hover:text-blue-400"> Home </Link>
-          <Link href='/about' className="hover:text-blue-400"> About </Link>
-        </nav>
-        <div className="p-10 bg-gray-300">{children}</div>
+        <Nav isLoggedIn={isLoggedIn}/>
+        <div className="p-4">{children}</div>
       </body>
     </html>
   );

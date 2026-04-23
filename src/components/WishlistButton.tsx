@@ -12,7 +12,7 @@ export default function WishlistButton({ dealID }: WishlistButtonProps) {
 
     return (
         <button onClick={ () => setAdded(!added)}
-        className="wishlist-button px-3 py-1 rounded border text-sm ">
+        className="wishlist-button px-3 py-0.5 rounded border text-sm ">
             {added ? '❤ In Wishlist' : '🖤 Add to Wishlist'}
         </button>
     );

@@ -27,7 +27,9 @@ export default function GameCard({ game } : GameCardProps) {
             <div className="flex items-center justify-between mt-3">
                 <Link href={`/games/${game.dealID}`}
                 className="text-blue-500 hover:unerline text-sm">View deal &rarr;</Link>
-                <WishlistButton dealID={game.dealID}/>
+                <div className="flex-shrink-1">
+                    <WishlistButton dealID={game.dealID}/>
+                </div>
             </div>
         </div>
     );
